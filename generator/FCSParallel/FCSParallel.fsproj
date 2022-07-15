@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+        <GenerateProgramFile>false</GenerateProgramFile>
+        <Configuration>Debug</Configuration>
+        <Optimize>false</Optimize>
+        <OutputType>exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\decentlySizedStandAloneFile.fs">
+          <Link>decentlySizedStandAloneFile.fs</Link>
+        </None>
+        <Compile Include="MSBuild.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Build" Version="16.5.0-preview-19606-01" ExcludeAssets="runtime" />
+        <PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
+<!--        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />-->
+<!--        <PackageReference Include="NUnit" Version="3.13.3" />-->
+<!--        <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />-->
+<!--        <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />-->
+        <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\src\Compiler\FSharp.Compiler.Service.fsproj" />
+      <ProjectReference Include="..\BenchmarkComparison\HistoricalBenchmark.fsproj" />
+      <ProjectReference Include="..\CompilerServiceBenchmarks\FSharp.Compiler.Benchmarks.fsproj" />
+    </ItemGroup>
+
+</Project>
