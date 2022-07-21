@@ -1,6 +1,7 @@
 # output location
 artifacts/
 BenchmarkDotNet.Artifacts/
+.artifacts/
 
 /tests/scripts/current
 .dotnet/
